@@ -1,0 +1,17 @@
+{
+  "name": "jimchen\/easyqq",
+  "description": "QQ小程序",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "JimChen",
+      "email": "imjimchen@163.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "EasyQQ\\": "src"
+    }
+  }
+}
