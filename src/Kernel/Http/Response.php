@@ -6,7 +6,6 @@ use EasyQQ\Kernel\Support\Collection;
 use EasyQQ\Kernel\Support\XML;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use Psr\Http\Message\ResponseInterface;
-use function preg_replace;
 
 /**
  * Class Response
@@ -76,7 +75,7 @@ class Response extends GuzzleResponse
     /**
      * Get collection data.
      *
-     * @return \EasyWeChat\Kernel\Support\Collection
+     * @return Collection
      */
     public function toCollection()
     {

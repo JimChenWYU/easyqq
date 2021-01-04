@@ -12,7 +12,8 @@
     "php": ">=7.2",
     "ext-openssl": "*",
     "ext-json": "*",
-    "ext-libxml": "*",
+    "ext-simplexml": "*",
+
     "pimple/pimple": "^3.0",
     "guzzlehttp/guzzle": "^6.2 || ^7.0",
     "monolog/monolog": "^1.22 || ^2.0",
@@ -24,8 +25,8 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.17",
-    "phpunit/phpunit": "^9.5",
-    "mockery/mockery": "^1.4"
+    "mockery/mockery": "^1.4",
+    "phpunit/phpunit": "^8.5"
   },
   "autoload": {
     "psr-4": {

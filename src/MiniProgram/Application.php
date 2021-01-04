@@ -3,11 +3,16 @@
 namespace EasyQQ\MiniProgram;
 
 use EasyQQ\Kernel\ServiceContainer;
+use EasyQQ\MiniProgram\Auth\AccessToken;
+use EasyQQ\MiniProgram\Auth\Client;
 
 /**
  * Class Application
  *
  * @author JimChen <imjimchen@163.com>
+ *
+ * @property AccessToken           $access_token
+ * @property Client                $auth
  */
 class Application extends ServiceContainer
 {
