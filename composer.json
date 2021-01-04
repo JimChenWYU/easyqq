@@ -23,16 +23,24 @@
     "symfony/event-dispatcher": "^4.3 || ^5.0"
   },
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.17"
+    "friendsofphp/php-cs-fixer": "^2.17",
+    "phpunit/phpunit": "^9.5",
+    "mockery/mockery": "^1.4"
   },
   "autoload": {
     "psr-4": {
       "EasyQQ\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "EasyQQ\\Tests\\": "tests"
+    }
+  },
   "scripts": {
     "phpcs": "vendor/bin/php-cs-fixer fix",
     "check-style": "vendor/bin/php-cs-fixer fix --using-cache=no --diff --config=.php_cs --dry-run --ansi",
-    "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no --config=.php_cs --ansi"
+    "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no --config=.php_cs --ansi",
+    "test": "vendor/bin/phpunit --colors=always"
   }
 }

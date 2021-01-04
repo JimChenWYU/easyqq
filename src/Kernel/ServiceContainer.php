@@ -7,12 +7,22 @@ use EasyQQ\Kernel\Providers\EventDispatcherServiceProvider;
 use EasyQQ\Kernel\Providers\HttpClientServiceProvider;
 use EasyQQ\Kernel\Providers\LogServiceProvider;
 use EasyQQ\Kernel\Providers\RequestServiceProvider;
+use GuzzleHttp\Client;
+use Monolog\Logger;
 use Pimple\Container;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class ServiceContainer
  *
  * @author JimChen <imjimchen@163.com>
+ *
+ * @property Config          $config
+ * @property Request         $request
+ * @property Client          $http_client
+ * @property Logger          $logger
+ * @property EventDispatcher $events
  */
 class ServiceContainer extends Container
 {
@@ -35,6 +45,22 @@ class ServiceContainer extends Container
      * @var array
      */
     protected $userConfig = [];
+
+    /**
+     * Constructor.
+     */
+    public function __construct(array $config = [], array $prepends = [], string $id = null)
+    {
+        $this->userConfig = $config;
+
+        parent::__construct($prepends);
+
+        $this->id = $id;
+
+        $this->registerProviders($this->getProviders());
+
+        $this->events->dispatch(new Events\ApplicationInitialized($this));
+    }
 
     /**
      * @return string

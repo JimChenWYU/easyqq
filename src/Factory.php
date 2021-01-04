@@ -3,11 +3,14 @@
 namespace EasyQQ;
 
 use EasyQQ\Kernel\ServiceContainer;
+use EasyQQ\MiniProgram\Application;
 
 /**
  * Class Factory
  *
  * @author JimChen <imjimchen@163.com>
+ *
+ * @method static Application        miniProgram(array $config)
  */
 class Factory
 {
