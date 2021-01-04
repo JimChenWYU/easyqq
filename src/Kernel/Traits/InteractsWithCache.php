@@ -9,10 +9,6 @@ use Psr\SimpleCache\CacheInterface as SimpleCacheInterface;
 use Symfony\Component\Cache\Adapter\FilesystemAdapter;
 use Symfony\Component\Cache\Psr16Cache;
 use Symfony\Component\Cache\Simple\FilesystemCache;
-use function array_intersect;
-use function class_exists;
-use function class_implements;
-use function sprintf;
 
 /**
  * Trait InteractsWithCache

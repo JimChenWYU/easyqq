@@ -6,8 +6,8 @@ use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Utils;
 use Psr\Http\Message\ResponseInterface;
-use function GuzzleHttp\choose_handler;
 
 /**
  * Trait HasHttpRequests
@@ -199,6 +199,6 @@ trait HasHttpRequests
                 : $handler;
         }
 
-        return choose_handler();
+        return Utils::chooseHandler();
     }
 }
