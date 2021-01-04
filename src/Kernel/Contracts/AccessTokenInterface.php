@@ -11,12 +11,12 @@ use Psr\Http\Message\RequestInterface;
  */
 interface AccessTokenInterface
 {
-	public function getToken(): array;
+    public function getToken(): array;
 
-	/**
-	 * @return AccessTokenInterface
-	 */
-	public function refresh(): self;
+    /**
+     * @return AccessTokenInterface
+     */
+    public function refresh(): self;
 
-	public function applyToRequest(RequestInterface $request, array $requestOptions = []): RequestInterface;
+    public function applyToRequest(RequestInterface $request, array $requestOptions = []): RequestInterface;
 }

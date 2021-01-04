@@ -9,5 +9,4 @@ namespace EasyQQ\Kernel;
  */
 class Config
 {
-
 }

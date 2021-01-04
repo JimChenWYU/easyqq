@@ -9,5 +9,4 @@ namespace EasyQQ\Kernel\Exceptions;
  */
 class RuntimeException extends Exception
 {
-
 }

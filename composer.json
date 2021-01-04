@@ -22,9 +22,17 @@
     "symfony/psr-http-message-bridge": " ^0.3 || ^1.0 || ^2.0",
     "symfony/event-dispatcher": "^4.3 || ^5.0"
   },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.17"
+  },
   "autoload": {
     "psr-4": {
       "EasyQQ\\": "src"
     }
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/php-cs-fixer fix",
+    "check-style": "vendor/bin/php-cs-fixer fix --using-cache=no --diff --config=.php_cs --dry-run --ansi",
+    "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no --config=.php_cs --ansi"
   }
 }
