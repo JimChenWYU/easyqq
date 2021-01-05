@@ -1,18 +1,25 @@
-<h1 align="center"> easyqq </h1>
+<h1 align="center"> EasyQQ </h1>
 
 <p align="center"> QQ小程序.</p>
 
-## Installing
+## 安装
 
 ```shell
-$ composer require jimchen/easyqq -vvv
+$ composer require jimchen/easyqq
 ```
 
-## Usage
+## 用法
 
-TODO
+正在开发中...
 
-## Contributing
+## 感谢
+
+[EasyWeChat](https://github.com/w7corp/easywechat)
+
+- SDK架构, API ~~参(chao)考(xi)~~ EasyWeChat 4.x
+- 测试用例大多直接搬运
+
+## 参与
 
 You can contribute in one of three ways:
 
