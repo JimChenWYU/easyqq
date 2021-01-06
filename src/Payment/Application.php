@@ -12,6 +12,14 @@ use Symfony\Component\HttpFoundation\Response;
  * Class Application
  *
  * @author JimChen <imjimchen@163.com>
+ *
+ * @property \EasyQQ\Payment\Bill\Client              $bill
+ * @property \EasyQQ\Payment\Fundflow\Client          $fundflow
+ * @property \EasyQQ\Payment\Jssdk\Client             $jssdk
+ * @property \EasyQQ\Payment\Order\Client             $order
+ * @property \EasyQQ\Payment\Refund\Client            $refund
+ *
+ * @method mixed pay(array $attributes)
  */
 class Application extends ServiceContainer
 {
@@ -19,6 +27,7 @@ class Application extends ServiceContainer
         Base\ServiceProvider::class,
         Order\ServiceProvider::class,
         Refund\ServiceProvider::class,
+        Jssdk\ServiceProvider::class,
         Bill\ServiceProvider::class,
         Fundflow\ServiceProvider::class,
     ];
