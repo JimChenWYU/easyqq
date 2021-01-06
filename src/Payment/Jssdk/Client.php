@@ -13,14 +13,7 @@ use EasyQQ\Payment\Kernel\BaseClient;
 class Client extends BaseClient
 {
     /**
-     * [WeixinJSBridge] Generate js config for payment.
-     *
-     * <pre>
-     * WeixinJSBridge.invoke(
-     *  'getBrandWCPayRequest',
-     *  ...
-     * );
-     * </pre>
+     * Generate js config for payment.
      *
      * @return string|array
      */
@@ -39,11 +32,7 @@ class Client extends BaseClient
     }
 
     /**
-     * [JSSDK] Generate js config for payment.
-     *
-     * <pre>
-     * wx.chooseWXPay({...});
-     * </pre>
+     * Generate js config for payment.
      */
     public function sdkConfig(string $prepayId): array
     {
