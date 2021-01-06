@@ -42,19 +42,21 @@ class Client extends BaseClient
     /**
      * Generate app payment parameters.
      */
-    public function appConfig(string $tokenId): array
+    public function appConfig(string $tokenId, string $pubAccHint = ''): array
     {
         $params = [
             'appId' => $this->app['config']->app_id,
             'bargainorId' => $this->app['config']->mch_id,
             'tokenId' => $tokenId,
             'nonce' => uniqid('', false),
-            'timeStamp' => time(),
-            'sigType' => 'HMAC-SHA1',
             'pubAcc' => '',
         ];
 
         $params['sig'] = Utils::generateSign($params, $this->app['config']->key, 'sha1');
+
+        $params['sigType'] = 'HMAC-SHA1';
+        $params['timeStamp'] = time();
+        $params['pubAccHint'] = $pubAccHint;
 
         return $params;
     }
