@@ -6,6 +6,7 @@ use Closure;
 use EasyQQ\Kernel\Exceptions\Exception;
 use EasyQQ\Kernel\Exceptions\InvalidArgumentException;
 use EasyQQ\Kernel\ServiceContainer;
+use EasyQQ\Payment\Refund\Client;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
@@ -13,11 +14,11 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @author JimChen <imjimchen@163.com>
  *
- * @property \EasyQQ\Payment\Bill\Client              $bill
- * @property \EasyQQ\Payment\Fundflow\Client          $fundflow
- * @property \EasyQQ\Payment\Jssdk\Client             $jssdk
- * @property \EasyQQ\Payment\Order\Client             $order
- * @property \EasyQQ\Payment\Refund\Client            $refund
+ * @property Bill\Client     $bill
+ * @property Fundflow\Client $fundflow
+ * @property Jssdk\Client    $jssdk
+ * @property Order\Client    $order
+ * @property Client          $refund
  *
  * @method mixed pay(array $attributes)
  */
