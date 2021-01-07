@@ -3,16 +3,15 @@
 namespace EasyQQ\MiniProgram;
 
 use EasyQQ\Kernel\ServiceContainer;
-use EasyQQ\MiniProgram\Auth\AccessToken;
-use EasyQQ\MiniProgram\Auth\Client;
 
 /**
  * Class Application
  *
  * @author JimChen <imjimchen@163.com>
  *
- * @property AccessToken           $access_token
- * @property Client                $auth
+ * @property \EasyQQ\MiniProgram\Auth\AccessToken           $access_token
+ * @property \EasyQQ\MiniProgram\Auth\Client                $auth
+ * @property \EasyQQ\MiniProgram\Wxpay\Client               $wxpay
  */
 class Application extends ServiceContainer
 {
@@ -21,6 +20,7 @@ class Application extends ServiceContainer
      */
     protected $providers = [
         Auth\ServiceProvider::class,
+        Wxpay\ServiceProvider::class,
     ];
 
     /**
