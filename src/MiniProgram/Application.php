@@ -2,16 +2,19 @@
 
 namespace EasyQQ\MiniProgram;
 
+use EasyQQ\Kernel\Exceptions\InvalidArgumentException;
 use EasyQQ\Kernel\ServiceContainer;
+use EasyQQ\MiniProgram\Auth\AccessToken;
+use EasyQQ\MiniProgram\Wxpay\Client;
 
 /**
  * Class Application
  *
  * @author JimChen <imjimchen@163.com>
  *
- * @property \EasyQQ\MiniProgram\Auth\AccessToken           $access_token
- * @property \EasyQQ\MiniProgram\Auth\Client                $auth
- * @property \EasyQQ\MiniProgram\Wxpay\Client               $wxpay
+ * @property AccessToken $access_token
+ * @property Auth\Client $auth
+ * @property Client      $wxpay
  */
 class Application extends ServiceContainer
 {
@@ -24,15 +27,22 @@ class Application extends ServiceContainer
     ];
 
     /**
-     * Handle dynamic calls.
+     * @return string
      *
-     * @param string $method
-     * @param array  $args
-     *
-     * @return mixed
+     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
      */
-    public function __call($method, $args)
+    public function getKey(string $endpoint = null)
     {
-        return $this->base->$method(...$args);
+        $key = $this['config']->key;
+
+        if (empty($key)) {
+            throw new InvalidArgumentException('config key should not empty.');
+        }
+
+        if (32 !== strlen($key)) {
+            throw new InvalidArgumentException(sprintf("'%s' should be 32 chars length.", $key));
+        }
+
+        return $key;
     }
 }
