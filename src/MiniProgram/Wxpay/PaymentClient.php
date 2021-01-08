@@ -2,12 +2,14 @@
 
 namespace EasyQQ\MiniProgram\Wxpay;
 
+use EasyQQ\Kernel\BaseClient;
 use EasyQQ\Kernel\Exceptions\InvalidArgumentException;
 use EasyQQ\Kernel\Exceptions\InvalidConfigException;
 use EasyQQ\Kernel\Support\Arr;
 use EasyQQ\Kernel\Support\Collection;
 use EasyQQ\Kernel\Support\Utils;
 use EasyQQ\Kernel\Support\XML;
+use EasyQQ\MiniProgram\Application;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
@@ -16,7 +18,8 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Trait PaymentClient
  *
- * @mixin \EasyQQ\Kernel\BaseClient
+ * @mixin BaseClient
+ * @property-read Application $app
  */
 trait PaymentClient
 {
@@ -71,7 +74,7 @@ trait PaymentClient
     /**
      * Log the request.
      *
-     * @return Closure
+     * @return callable
      */
     protected function logMiddleware()
     {

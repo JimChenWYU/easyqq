@@ -47,7 +47,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     /**
      * Return specific items.
      *
-     * @return \EasyWeChat\Kernel\Support\Collection
+     * @return \EasyQQ\Kernel\Support\Collection
      */
     public function only(array $keys)
     {
@@ -83,7 +83,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
      *
      * @param Collection|array $items
      *
-     * @return \EasyWeChat\Kernel\Support\Collection
+     * @return \EasyQQ\Kernel\Support\Collection
      */
     public function merge($items)
     {

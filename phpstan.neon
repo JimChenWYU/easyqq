@@ -1,0 +1,13 @@
+parameters:
+    level: 3
+    paths:
+        - src
+    inferPrivatePropertyTypeFromConstructor: true
+    ignoreErrors:
+        - '#Unsafe usage of new static\(\)#'
+        - '#Psr.*Exception is not subtype of Throwable#'
+        - '#Default value of the parameter \#2 \$depth \(float\) of method EasyQQ\\Kernel\\Support\\Arr::flatten\(\) is incompatible with type int#'
+        - '#Access to an undefined property EasyQQ\\Payment\\Application::\$base#'
+        - '#Method EasyQQ\\Kernel\\Support\\Collection::__set_state\(\) should return object but returns array#'
+        - '#Instantiated class Symfony\\Component\\Cache\\Simple\\FilesystemCache not found.#'
+        - '#Method EasyQQ\\Kernel\\AccessToken::createDefaultCache\(\) should return Psr\\SimpleCache\\CacheInterface but returns Symfony\\Component\\Cache\\Simple\\FilesystemCache.#'

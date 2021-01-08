@@ -191,7 +191,7 @@ class LogManager implements LoggerInterface
     {
         return new Monolog('EasyQQ', $this->prepareHandlers([
             new StreamHandler(
-                sys_get_temp_dir() . '/easywechat/easywechat.log',
+                sys_get_temp_dir() . '/easyqq/easyqq.log',
                 $this->level(['level' => 'debug'])
             ),
         ]));
@@ -269,7 +269,7 @@ class LogManager implements LoggerInterface
             $this->prepareHandler(new SlackWebhookHandler(
                 $config['url'],
                 $config['channel'] ?? null,
-                $config['username'] ?? 'EasyWeChat',
+                $config['username'] ?? 'EasyQQ',
                 $config['attachment'] ?? true,
                 $config['emoji'] ?? ':boom:',
                 $config['short'] ?? false,
@@ -290,7 +290,7 @@ class LogManager implements LoggerInterface
     {
         return new Monolog($this->parseChannel($config), [
             $this->prepareHandler(new SyslogHandler(
-                'EasyWeChat',
+                'EasyQQ',
                 $config['facility'] ?? LOG_USER,
                 $this->level($config)
             ), $config),
@@ -316,7 +316,7 @@ class LogManager implements LoggerInterface
 
     protected function createNullDriver()
     {
-        return new Monolog('EasyWeChat', [new NullHandler()]);
+        return new Monolog('EasyQQ', [new NullHandler()]);
     }
 
     /**
@@ -369,7 +369,7 @@ class LogManager implements LoggerInterface
      */
     protected function parseChannel(array $config)
     {
-        return $config['name'] ?? 'EasyWeChat';
+        return $config['name'] ?? 'EasyQQ';
     }
 
     /**
@@ -415,7 +415,7 @@ class LogManager implements LoggerInterface
      *
      * @param string $driver
      *
-     * @return \EasyWeChat\Kernel\Log\LogManager
+     * @return \EasyQQ\Kernel\Log\LogManager
      */
     public function extend($driver, Closure $callback)
     {

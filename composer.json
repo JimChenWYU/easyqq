@@ -26,8 +26,9 @@
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.17",
-    "mockery/mockery": "^1.4",
-    "phpunit/phpunit": "^8.5"
+    "phpunit/phpunit": "^8.5",
+    "mockery/mockery": "^1.3",
+    "phpstan/phpstan": "^0.12.65"
   },
   "autoload": {
     "psr-4": {
@@ -41,6 +42,7 @@
   },
   "scripts": {
     "phpcs": "vendor/bin/php-cs-fixer fix",
+    "phpstan": "vendor/bin/phpstan analyse",
     "check-style": "vendor/bin/php-cs-fixer fix --using-cache=no --diff --config=.php_cs --dry-run --ansi",
     "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no --config=.php_cs --ansi",
     "test": "vendor/bin/phpunit --colors=always"

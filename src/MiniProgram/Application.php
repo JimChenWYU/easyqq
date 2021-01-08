@@ -29,7 +29,7 @@ class Application extends ServiceContainer
     /**
      * @return string
      *
-     * @throws \EasyWeChat\Kernel\Exceptions\InvalidArgumentException
+     * @throws \EasyQQ\Kernel\Exceptions\InvalidArgumentException
      */
     public function getKey(string $endpoint = null)
     {

@@ -52,7 +52,7 @@ trait InteractsWithCache
      *
      * @param SimpleCacheInterface|CacheItemPoolInterface $cache
      *
-     * @return InteractsWithCache
+     * @return $this
      *
      * @throws InvalidArgumentException
      */

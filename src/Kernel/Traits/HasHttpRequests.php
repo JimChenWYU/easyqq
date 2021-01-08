@@ -63,7 +63,7 @@ trait HasHttpRequests
     /**
      * Set GuzzleHttp\Client.
      *
-     * @return HasHttpRequests
+     * @return $this
      */
     public function setHttpClient(ClientInterface $httpClient)
     {
