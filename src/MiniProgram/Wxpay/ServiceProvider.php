@@ -12,9 +12,9 @@ use Pimple\ServiceProviderInterface;
  */
 class ServiceProvider implements ServiceProviderInterface
 {
-	/**
-	 * @param Container $app
-	 */
+    /**
+     * @param Container $app
+     */
     public function register(Container $app)
     {
         !isset($app['wxpay']) && $app['wxpay'] = function ($app) {
