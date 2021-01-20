@@ -48,13 +48,13 @@ trait PaymentClient
     protected function paymentRequest(string $endpoint, array $params = [], $method = 'post', array $options = [], $returnResponse = false)
     {
         $base = [
-            'mch_id' => $this->app['config']['mch_id'],
+            'mch_id' => $this->app['config']['wechat_mch_id'],
             'nonce_str' => uniqid('', false),
         ];
 
         $params = array_filter(array_merge($base, $this->prepends(), $params), 'strlen');
 
-        $secretKey = $this->app->getKey();
+        $secretKey = $this->app->getWxKey();
 
         $encryptMethod = Utils::getEncryptMethod(Arr::get($params, 'sign_type', 'MD5'), $secretKey);
 

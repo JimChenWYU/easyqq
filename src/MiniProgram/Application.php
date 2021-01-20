@@ -31,9 +31,9 @@ class Application extends ServiceContainer
      *
      * @throws \EasyQQ\Kernel\Exceptions\InvalidArgumentException
      */
-    public function getKey(string $endpoint = null)
+    public function getWxKey()
     {
-        $key = $this['config']->key;
+        $key = $this['config']->wechat_key;
 
         if (empty($key)) {
             throw new InvalidArgumentException('config key should not empty.');

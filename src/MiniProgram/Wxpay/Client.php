@@ -40,7 +40,12 @@ class Client extends BaseClient
         }
 
         $params['trade_type'] = 'MWEB'; // h5
-        $params['appid'] = $this->app['config']->app_id;
+        /**
+         * body 中的 appid，body 中填写的是微信的 APPID
+         *
+         * @link https://q.qq.com/wiki/develop/miniprogram/server/virtual-payment/wx_pay.html
+         */
+        $params['appid'] = $this->app['config']->wechat_app_id;
         $realNotifyUrl = $params['notify_url'] ?? $this->app['config']['notify_url'];
         $params['notify_url'] = $this->proxyNotifyUrl;
 
