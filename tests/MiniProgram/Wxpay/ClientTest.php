@@ -18,8 +18,9 @@ class ClientTest extends TestCase
     protected function app()
     {
         return new Application([
-            'app_id' => 'wx123456',
-            'mch_id' => 'foo-merchant-id',
+        	'app_id'        => 'qq123456',
+            'wechat_app_id' => 'wx123456',
+            'wechat_mch_id' => 'wechat-merchant-id',
             'notify_url' => 'http://easyqq.org/notify',
         ]);
     }
@@ -31,7 +32,8 @@ class ClientTest extends TestCase
         $token->expects()->getToken()->andReturn(['access_token' => 'foobar']);
         $client->setAccessToken($token);
         $order = [
-            //
+	        'total_fee' => 100,
+	        'body' => 'test'
         ];
         $client->expects()->paymentRequest('wxpay/unifiedorder', array_merge($order, [
             'spbill_create_ip' => Support\Utils::getClientIp(),
@@ -40,7 +42,7 @@ class ClientTest extends TestCase
             'notify_url' => 'https://api.q.qq.com/wxpay/notify',
         ]), 'post', [
             'query' => [
-                'appid' => 'wx123456',
+                'appid' => 'qq123456',
                 'access_token' => 'foobar',
                 'real_notify_url' => 'http://easyqq.org/notify'
             ],
